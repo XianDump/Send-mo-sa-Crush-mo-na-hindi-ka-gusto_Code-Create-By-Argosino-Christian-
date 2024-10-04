@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Kita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+        .buttons {
+            margin-top: 50px;
+        }
+
+        #gusto, #diGusto {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #gusto {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #diGusto {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gusto Kita!</h1>
+    
+    <div class="buttons">
+        <button id="gusto" onclick="alert('Gusto din kita!')">Gusto din kita</button>
+        <button id="diGusto">Di kita gusto</button>
+    </div>
+
+    <script>
+        const diGustoBtn = document.getElementById('diGusto');
+
+        // Function to make the "Di kita gusto" button move around randomly
+        diGustoBtn.addEventListener('mouseover', function() {
+            const randomX = Math.floor(Math.random() * window.innerWidth - diGustoBtn.offsetWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight - diGustoBtn.offsetHeight);
+            diGustoBtn.style.left = randomX + 'px';
+            diGustoBtn.style.top = randomY + 'px';
+        });
+    </script>
+    
+</body>
+</html>
